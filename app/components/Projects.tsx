@@ -42,7 +42,10 @@ export default function Projects() {
         <h2 className="text-3xl font-bold mb-8 ">Projects</h2>
 
         {projectList.map((project, i) => (
-          <div className="flex items-center justify-center mb-10 py-12 px-4">
+          <div
+            key={i}
+            className="flex items-center justify-center mb-10 py-12 px-4"
+          >
             <div className="flex flex-col md:flex-row overflow-hidden hover:bg-warm-text group  hover:text-dark-2">
               {/* Bagian Kiri: Gambar Project */}
               <div className="md:w-1/2">
@@ -62,7 +65,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="px-6 py-3 bg-gray-300 text-dark-2 rounded hover:bg-gray-400 transition">
+                    <button className="px-6 py-3 bg-gray-300 text-dark-2 hover:bg-gray-400 transition">
                       Live Demo
                     </button>
                   </a>
@@ -71,7 +74,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="px-6 py-3 text-warm-text  group-hover:text-dark-2 transition">
+                    <button className="px-6 py-3  group-hover:text-warm-text group-hover:bg-mung-beans transition">
                       Source Code
                     </button>
                   </a>

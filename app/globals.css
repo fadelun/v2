@@ -9,6 +9,7 @@
 }
 
 body {
+  font-family: var(--font-reddit), sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -17,11 +18,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
-/* h1 {
-  @apply text-4xl text-left;
-}
-
-h2 {
-  @apply text-3xl text-left;
-} */
