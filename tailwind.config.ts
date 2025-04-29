@@ -10,10 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "dark-1": "#1E201E",
-        "dark-2": "#3C3D37",
-        "mung-beans": "#697565",
-        "warm-text": "#ECDFCC",
+        "dark-1": "var(--color-primary)",
+        "dark-2": "var(--color-secondary)",
+        "mung-beans": "var(--color-accent)",
+        "warm-text": "var(--color-muted)",
       },
     },
   },

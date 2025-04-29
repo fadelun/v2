@@ -1,8 +1,14 @@
+"use client";
+
+import ThemeSwitcher from "./ThemeSwitcher";
 import { Github, Linkedin, Mail, Codepen, Instagram } from "lucide-react";
 
 export default function Header() {
   return (
     <section className=" py-20">
+      <div className=" px-2 py-4 absolute top-4 right-2">
+        <ThemeSwitcher />
+      </div>
       <div className="container max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-2">Muhammad Fadll</h1>
         <p className="text-xl  mb-6">Front End Developer</p>

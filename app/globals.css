@@ -6,6 +6,41 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --color-primary: #1e201e; /* Default: biru gelap */
+  --color-secondary: #3c3d37;
+  --color-accent: #697565;
+  --color-muted: #ecdfcc;
+}
+
+.theme-default {
+  --color-primary: #1e201e; /* Default: biru gelap */
+  --color-secondary: #3c3d37;
+  --color-accent: #697565;
+  --color-muted: #ecdfcc;
+}
+.theme-gray {
+  --color-primary: #1d1d1d;
+  --color-secondary: #fdc5a2;
+  --color-accent: #4e3a2b;
+  --color-muted: #776b62;
+}
+
+.theme-red {
+  --color-primary: #3b392d;
+  --color-secondary: #ffe66d;
+  --color-accent: #b91c1c;
+  --color-muted: #ff6b6b;
+}
+
+.theme-cyan {
+  --color-primary: #f6f1f1;
+  --color-secondary: #e3edfc;
+  --color-accent: #44a3cc;
+  --color-muted: #60899b;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {

@@ -9,7 +9,7 @@ const reddit = Reddit_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio",
+  title: "Muhammad Fadll | Front end developer",
   description: "A showcase of my work and skills as a developer",
 };
 
