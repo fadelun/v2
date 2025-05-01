@@ -4,7 +4,7 @@ import portfolioPic from "@/public/assets/fadelun-portfolio.png";
 import countriesPic from "@/public/assets/rest-countries-api.jpg";
 import tweetPic from "@/public/assets/tweet-generator.jpg";
 import piscokPic from "@/public/assets/pesen-piscok.png";
-import foodPalacePic from "@/public/assets/food-palace.png";
+import foodPalacePic from "@/public/assets/food-overview.png";
 
 export default function Projects() {
   const projectList = [
@@ -13,14 +13,14 @@ export default function Projects() {
       url: "https://pesen-piscok.vercel.app/",
       desc: "A simple e-commerce platform designed to facilitate the ordering of piscok (chocolate banana). To make ordering easier, buyers simply need to click on the selected food without having to write it manually on WA. This is where I began to understand how React Redux Toolkit works.",
       repo: "",
-      image: piscokPic, // Replace with your actual screenshot
+      image: piscokPic,
     },
     {
       title: "Fadelun Personal Site",
       url: "https://fadelun-github-io.vercel.app/",
       desc: "my old version of personal website showcasing the projects, portfolio, and insights into his work and interests.",
       repo: "https://github.com/fadelun/fadelun.github.io",
-      image: portfolioPic, // Replace with your actual screenshot
+      image: portfolioPic,
     },
 
     {
@@ -82,7 +82,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <button className="px-6 py-3 bg-warm-text text-dark-2 hover:bg-gray-500 transition">
+                    <button className="px-6 py-3  hover:rotate-12 transition">
                       Live Demo
                     </button>
                   </a>
@@ -92,7 +92,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <button className="px-6 py-3  group-hover:text-warm-text group-hover:bg-mung-beans transition">
+                      <button className="px-6 py-3  hover:rotate-12  transition">
                         Source Code
                       </button>
                     </a>

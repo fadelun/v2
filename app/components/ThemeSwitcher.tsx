@@ -4,10 +4,14 @@ const themes = ["gray", "red", "cyan", "white"] as const;
 type Theme = (typeof themes)[number];
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const [theme, setTheme] = useState<Theme>("white");
+
+  useEffect(() => {
     const saved = localStorage.getItem("theme") as Theme;
-    return saved || "white";
-  });
+    if (saved && themes.includes(saved)) {
+      setTheme(saved);
+    }
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
