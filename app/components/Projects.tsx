@@ -1,12 +1,19 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import VanillaTilt from "vanilla-tilt";
 import Image from "next/image";
-// import bikeesPic from "@/public/assets/bikees.png";
+
+// Corrected import statements by removing extra quotes around paths
+// import bikeesPic from "public/assets/bikees.png";
 import portfolioPic from "@/public/assets/fadelun-portfolio.png";
 import countriesPic from "@/public/assets/rest-countries-api.jpg";
 import tweetPic from "@/public/assets/tweet-generator.jpg";
 import piscokPic from "@/public/assets/pesen-piscok.png";
 import foodPalacePic from "@/public/assets/food-overview.png";
 
-export default function Projects() {
+const Projects: React.FC = () => {
   const projectList = [
     {
       title: "Pesen Piscok",
@@ -53,56 +60,66 @@ export default function Projects() {
     // },
   ];
 
+  const tiltRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = tiltRef.current;
+
+    if (node) {
+      VanillaTilt.init(node, {
+        max: 8,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+        reverse: true,
+      });
+      // Optional cleanup
+      return () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (node as any).vanillaTilt?.destroy();
+      };
+    }
+  }, []);
+
   return (
     <section className="py-20">
       <div className="container max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 ">Projects</h2>
 
-        {projectList.map((project, i) => (
-          <div
-            key={i}
-            className="flex items-center justify-center mb-10 py-12 px-4"
-          >
-            <div className="flex flex-col md:flex-row overflow-hidden hover:bg-warm-text group  hover:text-dark-2">
-              {/* Bagian Kiri: Gambar Project */}
-              <div className="md:w-1/2">
-                <Image
-                  className="object-cover w-full h-full"
-                  src={project.image}
-                  alt="Project Screenshot"
-                />
-              </div>
-              {/* Bagian Kanan: Konten Project */}
-              <div className="p-8 md:w-1/2 flex flex-col justify-center">
-                <h2 className="text-4xl font-bold mb-4 ">{project.title}</h2>
-                <p className=" mb-6">{project.desc}</p>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="px-6 py-3  hover:rotate-12 transition">
-                      Live Demo
-                    </button>
-                  </a>
-                  {project.repo && (
-                    <a
-                      href={project.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <button className="px-6 py-3  hover:rotate-12  transition">
-                        Source Code
-                      </button>
-                    </a>
-                  )}
-                </div>
-              </div>
+        <div className="flex mx-auto md:gap-y-12 flex-wrap justify-center md:justify-between text-warm-text">
+          {projectList.map((project, i) => (
+            <div
+              key={i}
+              ref={tiltRef}
+              className="card mb-[10vw] md:mb-0 w-[25rem]  aspect-[16/9] bg-mung-beans"
+              data-tilt
+              data-tilt-reverse="true"
+              data-tilt-max-glare="0.5"
+              data-tilt-max="8"
+            >
+              {/* <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              > */}
+              <Image
+                className="object-cover w-full h-full"
+                src={project.image}
+                alt="Project Screenshot"
+              />
+              <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h2>{project.title}</h2>
+              </Link>
+              {/* </Link> */}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+export default Projects;
