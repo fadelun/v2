@@ -97,22 +97,26 @@ const Projects: React.FC = () => {
               data-tilt-max-glare="0.5"
               data-tilt-max="8"
             >
-              {/* <Link
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              > */}
-              <Image
-                className="object-cover w-full h-full"
-                src={project.image}
-                alt="Project Screenshot"
-              />
               <Link
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h2>{project.title}</h2>
+                <Image
+                  className="object-cover w-full h-full"
+                  src={project.image}
+                  alt="Project Screenshot"
+                />
+                {/* <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              > */}
+                <div className="absolute inset-0 group  hover:bg-gradient-to-t from-slate-900 to-transparent flex items-end transition hover:duration-450 ease-in-out overflow-hidden">
+                  <h2 className="text-blue-100 translate-y-6 group-hover:translate-y-0  text-xl font-bold transition hover:duration-500 ease-in-out  ">
+                    {project.title}
+                  </h2>
+                </div>
               </Link>
               {/* </Link> */}
             </div>
